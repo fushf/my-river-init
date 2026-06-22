@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# terminal
+riverctl map normal Super Return spawn foot
+
+# launcher
+riverctl map normal Super P spawn "wofi --show drun"
+riverctl map normal Super B spawn pcmanfm
+
+# zamknij okno
+riverctl map normal Super Q close
+
+# wyjście z river
+riverctl map normal Super+Shift E exit
+
+# focus
+riverctl map normal Super J focus-view next
+riverctl map normal Super K focus-view previous
+
+# Gruvbox
+riverctl border-width 2
+riverctl border-color-focused 0xfabd2f
+riverctl border-color-unfocused 0x504945
+
+# autostart
+waybar &
+swaybg -i ~/Obrazy/gruv-portal-cake.png &
+pipewire-pulse &
+pipewire &
+wireplumber &
+mako &
+wlr-randr --output DP-4 --mode 1920x1080@99.65 &
+setxkbmap pl &
+
+
+# workspaces (tagi) 1-9
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+
+    # przełącz na workspace
+    riverctl map normal Super $i set-focused-tags $tags
+
+    # przenieś okno na workspace
+    riverctl map normal Super+Shift $i set-view-tags $tags
+done
+
+
+# layout
+riverctl default-layout rivertile
+rivertile -view-padding 6 -outer-padding 6 &
+riverctl keyboard-layout pl
