@@ -1,0 +1,41 @@
+window {
+  margin: 0px;
+  border: 2px solid #fabd2f;
+  border-radius: 12px;
+  background-color: #282828;
+  font-family: DaddyTimeMono Nerd Font;
+  font-size: 12px;
+}
+
+#input {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #3c3836;
+  color: #ebdbb2;
+}
+
+#inner-box {
+  margin: 5px;
+}
+
+#entry {
+  padding: 10px;
+  margin: 2px;
+  border-radius: 8px;
+  color: #ebdbb2;
+}
+
+#entry:selected {
+  background-color: #fabd2f;
+  color: #282828;
+}
+
+#text {
+  color: inherit;
+}
+
+#img {
+  margin-right: 8px;
+}
