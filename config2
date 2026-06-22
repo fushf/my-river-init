@@ -1,0 +1,39 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+
+    "modules-left": [
+        "river/tags"
+    ],
+
+    "modules-right": [
+        "temperature",
+        "cpu",
+        "memory",
+        "clock"
+    ],
+
+    "river/tags": {
+        "num-tags": 9
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 2
+    },
+
+    "memory": {
+        "format": "󰍛 {}%",
+        "interval": 2
+    },
+
+    "temperature": {
+        "critical-threshold": 85,
+        "format": " {temperatureC}°C"
+    },
+
+    "clock": {
+        "format": "󰃭 {:%a %d.%m %H:%M}"
+    }
+}
